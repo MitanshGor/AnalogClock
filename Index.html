@@ -5,7 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="Clockcss.css" rel="stylesheet">
+  
+    <style>
+        *, *::after, *::before  {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  }
+  body{
+      background-color: aqua;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 100vh;
+  }
+.clock{
+    background-color: rgba(255, 192, 203, 1);
+    width: 600px;
+    border: 5px solid white;
+    height: 600px;
+    position: relative;
+    border-radius: 50%;
+  
+}
+.clock .number{
+
+    text-shadow: 0 0 3px black, 0 0 5px #eb44f7;
+    --rotate:0;
+    position: absolute;
+    color: aqua;
+    /* border : 4px solid rgb(81, 81, 231); */
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    height: 100%;
+    transform: rotate(var(--rotate));
+}
+.clock .number1 { --rotate: 30deg; }
+.clock .number2 { --rotate: 60deg; }
+.clock .number3 { --rotate: 90deg; }
+.clock .number4 { --rotate: 120deg; }
+.clock .number5 { --rotate: 150deg; }
+.clock .number6 { --rotate: 180deg; }
+.clock .number7 { --rotate: 210deg; }
+.clock .number8 { --rotate: 240deg; }
+.clock .number9 { --rotate: 270deg; }
+.clock .number10 { --rotate: 300deg; }
+.clock .number11 { --rotate: 330deg; }
+
+.clock .hand{
+    --rotate: 0;
+   
+position: absolute;
+left: 50%;
+bottom: 50%;
+transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+
+transform-origin: bottom;
+border-radius: 50px;
+}
+
+ .minute
+{
+    width: 5px;
+    height: 35%;
+    background-color: aqua;
+    border: 2px solid rgba(0, 0, 0, 0.571);
+}
+ .hour
+{
+    width: 10px;
+    height: 33%;
+    background-color: aqua;
+    border: 3px solid rgba(0, 0, 0, 0.571);
+}
+ .second
+{
+    width: 2px;
+    height: 39%;
+    background-color: aqua;
+    border: 1px solid rgba(0, 0, 0, 0.571);
+}
+.button
+{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    background-color: aqua;
+    border: 10px solid black;
+    top: 50%;
+    border-radius: 50%;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+}
+    </style>
 </head>
 <body class="body">
     <div class="clock">
@@ -29,7 +124,7 @@
     <div class="hand second" Date-second-Hand></div>
     
 </div>
-<script src="clockJs.js"></script>
+
     <script>
         setInterval(TimeMethod,1000)
 
